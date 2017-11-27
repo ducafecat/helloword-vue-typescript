@@ -1,23 +1,26 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    <input v-model="msg">
+    <p>msg: {{ msg }}</p>
+    <button @click="handelHello">hello</button>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'app'
-}
-</script>
+<script lang="ts">
+  import Vue from 'vue'
+  import Component from 'vue-class-component'
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  @Component
+  export default class App extends Vue {
+    // 初始化数据
+    msg: string = 'hello word'
+
+    mounted () {
+    }
+
+    // 方法
+    handelHello () {
+      this.msg = 'haha~~~ hello word!'
+    }
+  }
+</script>
