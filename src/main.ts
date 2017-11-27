@@ -6,10 +6,11 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
+/* tslint:disable */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App }
 })
+/* tslint:enable */
